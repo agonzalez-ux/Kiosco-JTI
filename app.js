@@ -24,7 +24,7 @@ const PROMO_VIDEOS=['Promociones/Publi Camel.mp4','Promociones/publi logic.mp4',
 const IDLE_DELAY=60000;
 let idleTimer=null,promoIndex=0;
 function resetIdleTimer(){clearTimeout(idleTimer);if(!$('catalogue').hidden&&!$('idle-screen').classList.contains('show'))idleTimer=setTimeout(showIdlePromo,IDLE_DELAY);}
-function playPromo(i){const video=$('idle-video');promoIndex=i;video.src=encodeURI(PROMO_VIDEOS[promoIndex]);video.play().catch(()=>{});}
+function playPromo(i){const video=$('idle-video');promoIndex=i;video.oncanplay=()=>video.play().catch(()=>{});video.src=encodeURI(PROMO_VIDEOS[promoIndex]);video.load();video.play().catch(()=>{});}
 function showIdlePromo(){$('idle-screen').classList.add('show');playPromo(0);}
 function hideIdlePromo(){if(!$('idle-screen').classList.contains('show'))return;$('idle-screen').classList.remove('show');const video=$('idle-video');video.pause();video.removeAttribute('src');video.load();resetIdleTimer();}
 $('idle-video').addEventListener('ended',()=>playPromo((promoIndex+1)%PROMO_VIDEOS.length));
