@@ -48,24 +48,25 @@ const PRODUCTS = [
     id: 'with-device',
     cat: 'calentado',
     brand: 'with.',
-    name: 'Dispositivo with. Negro',
+    name: 'Dispositivo with.',
     price: 32.90,
     tags: ['calentado', 'clasico', 'discreto', 'cualquier-momento'],
-    desc: 'Dispositivo de tabaco calentado con seis acabados de color.',
+    desc: 'Dispositivo with. en sus dos acabados principales: negro y gris.',
     color: '#1c1c1e',
     shape: 'heated-device',
-    swatches: ['#1c1c1e', '#6fc3e8', '#f2efe9', '#b3273a', '#2f7d3c'], // Negro, Azul, Blanco, Rojo, Verde
+    swatches: ['#1c1c1e', '#8a8f98'], // Negro, Gris
   },
   {
-    id: 'with-device-gris',
+    id: 'with-mini',
     cat: 'calentado',
     brand: 'with.',
-    name: 'Dispositivo with. Gris',
+    name: 'Dispositivo mini with.',
     price: 32.90,
     tags: ['calentado', 'clasico', 'discreto', 'cualquier-momento'],
-    desc: 'Dispositivo with. en acabado gris, con un diseño distinto y compacto.',
-    color: '#8a8f98',
+    desc: 'Formato mini with. compacto, disponible en acabados de color.',
+    color: '#f2efe9',
     shape: 'heated-device',
+    swatches: ['#f2efe9', '#6fc3e8', '#b3273a', '#2f7d3c'], // Blanco, Azul, Rojo, Verde
   },
 
   // ============= TABACO CALENTADO — STICKS MEVIUS (para Ploom X) =============
@@ -151,14 +152,12 @@ const PRODUCTS = [
     id: 'correa-personalizable',
     cat: 'accesorios',
     brand: 'JTI Collection',
-    name: 'Correa Personalizable',
+    name: 'Correa para dispositivo',
     price: 11.90,
     tags: ['accesorio', 'calentado'],
-    desc: 'Correa ajustable para llevar tu dispositivo siempre a mano. Añade tu nombre, palabra o frase.',
+    desc: 'Correa ajustable para llevar tu dispositivo siempre a mano.',
     color: '#1c8fd6',
     shape: 'lanyard',
-    customizable: true,
-    customTemplate: 'lanyard',
     swatches: ['#1c8fd6', '#7c2fd6', '#1c1c1e', '#b3273a'], // Azul, Lila, Negra, Roja
   },
   {
@@ -190,18 +189,18 @@ const PRODUCTS = [
     swatches: ['#0f4067', '#2f7d3c', '#9c1a6e', '#ffffff'],
   },
   {
-    id: 'estuche-metalico',
+    id: 'pitillera-personalizable',
     cat: 'accesorios',
     brand: 'JTI Collection',
-    name: 'Estuche Metálico Personalizable',
+    name: 'Pitillera Personalizable',
     price: 16.90,
     tags: ['accesorio', 'cigarrillos'],
-    desc: 'Estuche metálico resistente para tu paquete de cigarrillos, grabado con tu nombre o frase.',
+    desc: 'Pitillera metálica resistente para llevar tu paquete de cigarrillos, grabada con tu nombre o frase.',
     color: '#1c1c1e',
     shape: 'case',
     customizable: true,
-    customTemplate: 'case',
-    swatches: ['#1c1c1e', '#c9a24b', '#8a1f2b', '#4a4a4a'],
+    customTemplate: 'pitillera',
+    swatches: ['#1c1c1e', '#1c4fa8', '#c6c8ca', '#b3273a'],
   },
 ];
 
@@ -219,7 +218,7 @@ PRODUCTS.push(
 // Se asigna la foto de Productos/ al SKU correspondiente. Mantener estas
 // rutas relativas permite ejecutar el kiosco sin red y publicar la carpeta tal cual.
 const PRODUCT_IMAGES = {
-  'ploom-x':'ploom negro.png', 'ploom-aura':'ploom aura negro.png', 'with-device':'with negro.png', 'with-device-gris':'with gris.png',
+  'ploom-x':'ploom negro.png', 'ploom-aura':'ploom aura negro.png', 'with-device':'with negro.png', 'with-mini':'with blanco.png',
   'mevius-yellow-option':'mevius amarillo.png', 'mevius-smooth-regular':'mevius azul.png', 'mevius-muscat-green':'mevius greeen.png', 'mevius-deep-regular':'mevius verde.png', 'mevius-sharp-cold-menthol':'mevius menthol.png', 'mevius-purple-option':'mevius purple.png', 'mevius-red-option':'mevius rojo.png', 'mevius-cold-menthol':'mevius lila.png',
   'evo-yellow':'evo amarilo.png', 'evo-amber':'evo amber.png', 'evo-aquamarine':'evo aquamarine.png', 'evo-bronze':'evo bronze.png', 'evo-tan':'evo tan.png', 'evo-white':'evo blanco.png', 'evo-red':'evo rojo.png', 'evo-rose':'evo rosa.png', 'evo-green':'evo verde.png',
   'lyo-zesty-pear':'lyo amarillo.png', 'lyo-arctic-mint':'lyo azul.png', 'lyo-wild-berry':'lyo rosa.png',
@@ -232,15 +231,18 @@ const PRODUCT_IMAGES = {
   'correa-personalizable':'correa negra.png',
   'ploom-funda':'carcasa ploom negra.png',
   'nordic-spirit-estuche':'funda nordic azul.png',
+  'pitillera-personalizable':'pitillera negra.png',
 };
 // Variantes fotografiadas para los selectores de acabado/color.
 const PRODUCT_IMAGE_VARIANTS = {
   'ploom-x': { '#1c1c1e':'ploom negro.png', '#c9a24b':'ploom dorado.png', '#8a8f98':'ploom plata.png', '#173f5c':'ploom azul.png' },
   'ploom-aura': { '#173f5c':'ploom aura azul.png', '#1c1c1e':'ploom aura negro.png', '#8a8f98':'ploom aura plata.png', '#e08bb0':'ploom aura rosa.png' },
-  'with-device': { '#1c1c1e':'with negro.png', '#6fc3e8':'with azul.png', '#f2efe9':'with blanco.png', '#b3273a':'with rojo.png', '#2f7d3c':'with verde.png' },
+  'with-device': { '#1c1c1e':'with negro.png', '#8a8f98':'with gris.png' },
+  'with-mini': { '#f2efe9':'with blanco.png', '#6fc3e8':'with azul.png', '#b3273a':'with rojo.png', '#2f7d3c':'with verde.png' },
   'correa-personalizable': { '#1c8fd6':'correa azul.png', '#7c2fd6':'correa lila.png', '#1c1c1e':'correa negra.png', '#b3273a':'correa roja.png' },
-  'ploom-funda': { '#1c1c1e':'carcasa ploom negra.png', '#3a4a5c':'carcasa ploom azul.png', '#8a1f2b':'carcasa ploom rosa.png', '#c9a24b':'carcasa ploom blanca.png' },
+  'ploom-funda': { '#1c1c1e':'carcasa ploom negra.png', '#3a4a5c':'carcasa ploom azul.png', '#8a1f2b':'carcasa ploom rosa.png', '#c9a24b':'carcasa ploom dorada.png' },
   'nordic-spirit-estuche': { '#0f4067':'funda nordic azul.png', '#2f7d3c':'funda nordic verde.png', '#9c1a6e':'funda nordic negra.png', '#ffffff':'funda nordic blanca.png' },
+  'pitillera-personalizable': { '#1c1c1e':'pitillera negra.png', '#1c4fa8':'pitillera azul.png', '#c6c8ca':'pitillera plata.png', '#b3273a':'pitillera roja.png' },
 };
 PRODUCTS.forEach(product => {
   if(PRODUCT_IMAGES[product.id]) product.image = `Productos/${PRODUCT_IMAGES[product.id]}`;
@@ -300,9 +302,9 @@ const BUNDLES = {
   'ploom-aura': ['evo-amber', 'correa-personalizable'],
   'with-device': ['correa-personalizable'],
   'nordic-spirit-mint': ['nordic-spirit-estuche'],
-  'winston-blue': ['estuche-metalico'],
-  'camel-filters': ['estuche-metalico'],
-  'sobranie-gold': ['estuche-metalico'],
+  'winston-blue': ['pitillera-personalizable'],
+  'camel-filters': ['pitillera-personalizable'],
+  'sobranie-gold': ['pitillera-personalizable'],
 };
 
 // ---------- Niveles de gamificación ----------
