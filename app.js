@@ -7,15 +7,21 @@ const originalOpenProduct=openProduct;openProduct=id=>{originalOpenProduct(id);r
 const originalUpdateCart=updateCart;updateCart=()=>{originalUpdateCart();const subtotal=state.cart.reduce((sum,item)=>sum+(PRODUCTS.find(product=>product.id===item.id)?.price||0)+Number(item.personalizationPrice||0),0);$('cart-total').textContent=money(subtotal);};
 const originalEnter=enter;enter=()=>{originalEnter();};
 const ROULETTE_MIN_TOTAL=30;
+const WHEEL_ICON_GIFT='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M3 12h18M12 8v13"/><path d="M12 8c-1.5-4-6-4-6-1 0 2 2 1 6 1zM12 8c1.5-4 6-4 6-1 0 2-2 1-6 1z"/></svg>';
+const WHEEL_ICON_TAG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3h8a2 2 0 0 1 2 2v8a2 2 0 0 1-.59 1.41l-8 8a2 2 0 0 1-2.82 0l-8-8a2 2 0 0 1 0-2.82l8-8A2 2 0 0 1 11 3Z"/><circle cx="15.5" cy="8.5" r="1.5"/></svg>';
+const WHEEL_ICON_ENVELOPE='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>';
+const WHEEL_ICON_STAR='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l2.6 5.8L21 9.6l-4.7 4.2L17.6 21 12 17.6 6.4 21l1.3-7.2L3 9.6l6.4-.8L12 3z"/></svg>';
+const WHEEL_ICON_TICKET='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v1.5a1.5 1.5 0 0 0 0 3V14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1.5a1.5 1.5 0 0 0 0-3Z"/><path d="M14 6v12" stroke-dasharray="2 2"/></svg>';
+const WHEEL_ICON_PENCIL='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 3.5 6 6L8 22H2v-6Z"/><path d="m13 5 6 6"/></svg>';
 const ROULETTE_PRIZES=[
- {id:'engraving',label:'GRABADO\nGRATIS',symbol:'♢',type:'engraving'},
- {id:'five',label:'−5%',symbol:'◇',type:'percent',value:.05},
- {id:'ten',label:'−10%',symbol:'◇',type:'percent',value:.10},
- {id:'case',label:'FUNDA\nGRATIS',symbol:'▱',type:'gift'},
- {id:'again',label:'SIGUE\nJUGANDO',symbol:'☆',type:'none'},
- {id:'voucher',label:'VALE DE\n3 €',symbol:'▱',type:'amount',value:3},
- {id:'accessory',label:'ACCESORIO\nGRATIS',symbol:'✦',type:'gift'},
- {id:'surprise',label:'SORPRESA',symbol:'✦',type:'gift'}
+ {id:'engraving',label:'GRABADO\nGRATIS',symbol:WHEEL_ICON_GIFT,type:'engraving'},
+ {id:'five',label:'−5%',symbol:WHEEL_ICON_TAG,type:'percent',value:.05},
+ {id:'ten',label:'−10%',symbol:WHEEL_ICON_TAG,type:'percent',value:.10},
+ {id:'case',label:'FUNDA\nGRATIS',symbol:WHEEL_ICON_ENVELOPE,type:'gift'},
+ {id:'again',label:'SIGUE\nJUGANDO',symbol:WHEEL_ICON_STAR,type:'none'},
+ {id:'voucher',label:'VALE DE\n3 €',symbol:WHEEL_ICON_TICKET,type:'amount',value:3},
+ {id:'accessory',label:'ACCESORIO\nGRATIS',symbol:WHEEL_ICON_PENCIL,type:'gift'},
+ {id:'surprise',label:'SORPRESA',symbol:WHEEL_ICON_GIFT,type:'gift'}
 ];
 state.checkoutPrize=null;state.checkoutSignature='';state.roulettePlayed=new Set();
 const checkoutCartSignature=()=>state.cart.map(item=>`${item.id}:${item.personalization||''}:${item.personalizationPrice||0}`).sort().join('|');
