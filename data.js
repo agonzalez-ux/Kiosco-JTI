@@ -297,15 +297,41 @@ const QUIZ = [
 ];
 
 // ---------- Combos de upselling ----------
-const BUNDLES = {
-  'ploom-x': ['mevius-smooth-regular', 'correa-personalizable', 'ploom-funda'],
-  'ploom-aura': ['evo-amber', 'correa-personalizable'],
-  'with-device': ['correa-personalizable'],
-  'nordic-spirit-mint': ['nordic-spirit-estuche'],
-  'winston-blue': ['pitillera-personalizable'],
-  'camel-filters': ['pitillera-personalizable'],
-  'sobranie-gold': ['pitillera-personalizable'],
-};
+// Cada producto solo sugiere lo que tiene sentido comprar junto a él:
+// el dispositivo <-> sus sticks compatibles y su funda, la bolsita <->
+// su estuche, el cigarrillo <-> la pitillera, y viceversa. Se genera a
+// partir del propio catálogo para no dejarse ningún sabor/marca fuera.
+const BUNDLES = {};
+const MEVIUS_IDS = PRODUCTS.filter(p => p.brand === 'Mevius').map(p => p.id);
+const EVO_LYO_IDS = PRODUCTS.filter(p => p.brand === 'evo' || p.brand === 'lyo').map(p => p.id);
+const NORDIC_IDS = PRODUCTS.filter(p => p.cat === 'pouches').map(p => p.id);
+const CIGARRILLO_IDS = PRODUCTS.filter(p => p.cat === 'cigarrillos').map(p => p.id);
+const LOGIC_IDS = PRODUCTS.filter(p => p.brand === 'Logic').map(p => p.id);
+
+// Dispositivos de tabaco calentado -> sus sticks compatibles + su funda/correa
+BUNDLES['ploom-x'] = ['mevius-smooth-regular', 'mevius-deep-regular', 'ploom-funda'];
+BUNDLES['ploom-aura'] = ['evo-amber', 'lyo-arctic-mint', 'correa-personalizable'];
+BUNDLES['with-device'] = ['correa-personalizable'];
+BUNDLES['with-mini'] = ['correa-personalizable'];
+
+// Sticks -> el dispositivo para el que están hechos + su funda
+MEVIUS_IDS.forEach(id => { BUNDLES[id] = ['ploom-x', 'ploom-funda']; });
+EVO_LYO_IDS.forEach(id => { BUNDLES[id] = ['ploom-aura', 'correa-personalizable']; });
+
+// Bolsitas de nicotina -> el estuche para llevarlas
+NORDIC_IDS.forEach(id => { BUNDLES[id] = ['nordic-spirit-estuche']; });
+
+// Cigarrillos (cualquier marca) -> la pitillera
+CIGARRILLO_IDS.forEach(id => { BUNDLES[id] = ['pitillera-personalizable']; });
+
+// Vapeadores Logic -> correa para llevarlo encima
+LOGIC_IDS.forEach(id => { BUNDLES[id] = ['correa-personalizable']; });
+
+// Accesorios -> el producto para el que están pensados
+BUNDLES['ploom-funda'] = ['ploom-x'];
+BUNDLES['correa-personalizable'] = ['ploom-x', 'logic-negro'];
+BUNDLES['nordic-spirit-estuche'] = ['nordic-spirit-mint'];
+BUNDLES['pitillera-personalizable'] = ['winston-blue', 'camel-filters'];
 
 // ---------- Niveles de gamificación ----------
 const LEVELS = [
