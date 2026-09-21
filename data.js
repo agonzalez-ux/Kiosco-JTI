@@ -8,8 +8,8 @@
 
 // ---------- Categorías ----------
 const CATEGORIES = [
-  { id: 'calentado',   name: 'Tabaco Calentado',     brand: 'Ploom · Mevius · evo · lyo · with.', accent: '#5b6570', icon: 'flame' },
-  { id: 'vapeo',       name: 'Vapeadores',            brand: 'Logic',                              accent: '#00bb31', icon: 'cloud' },
+  { id: 'calentado',   name: 'Tabaco Calentado',     brand: 'Ploom · Mevius · evo · lyo',         accent: '#5b6570', icon: 'flame' },
+  { id: 'vapeo',       name: 'Vapeadores',            brand: 'Logic · with.',                      accent: '#00bb31', icon: 'cloud' },
   { id: 'pouches',     name: 'Bolsitas de Nicotina', brand: 'Nordic Spirit',                      accent: '#0f4067', icon: 'leaf' },
   { id: 'cigarrillos', name: 'Cigarrillos',          brand: '8 marcas clásicas',                  accent: '#c9a24b', icon: 'flag' },
   { id: 'accesorios',  name: 'Accesorios',           brand: 'JTI Collection',                     accent: '#f472b6', icon: 'gift' },
@@ -43,30 +43,6 @@ const PRODUCTS = [
     color: '#173f5c',
     shape: 'heated-device',
     swatches: ['#173f5c', '#1c1c1e', '#8a8f98', '#e08bb0'], // Navy, Black, Silver, Rose Gold
-  },
-  {
-    id: 'with-device',
-    cat: 'calentado',
-    brand: 'with.',
-    name: 'Dispositivo with.',
-    price: 32.90,
-    tags: ['calentado', 'clasico', 'discreto', 'cualquier-momento'],
-    desc: 'Dispositivo with. en sus dos acabados principales: negro y gris.',
-    color: '#1c1c1e',
-    shape: 'heated-device',
-    swatches: ['#1c1c1e', '#8a8f98'], // Negro, Gris
-  },
-  {
-    id: 'with-mini',
-    cat: 'calentado',
-    brand: 'with.',
-    name: 'Dispositivo mini with.',
-    price: 32.90,
-    tags: ['calentado', 'clasico', 'discreto', 'cualquier-momento'],
-    desc: 'Formato mini with. compacto, disponible en acabados de color.',
-    color: '#f2efe9',
-    shape: 'heated-device',
-    swatches: ['#f2efe9', '#6fc3e8', '#b3273a', '#2f7d3c'], // Blanco, Azul, Rojo, Verde
   },
 
   // ============= TABACO CALENTADO — STICKS MEVIUS (para Ploom X) =============
@@ -204,14 +180,46 @@ const PRODUCTS = [
   },
 ];
 
-// Logic vuelve a estar disponible al incorporarse sus fotografías locales.
+// ============= VAPEADORES =============
+// with. se traslada aquí desde Tabaco Calentado, y los 6 acabados de
+// Logic se unifican en un único producto con selector de color.
 PRODUCTS.push(
-  { id:'logic-azul',  cat:'vapeo', brand:'Logic', name:'Logic Compact Azul',  price:12.90, tags:['vapeo','moderno','discreto'], desc:'Vapeador Logic Compact en acabado azul.', color:'#1c4fa8', shape:'vape-pen', image:'Productos/logic azul.png' },
-  { id:'logic-negro', cat:'vapeo', brand:'Logic', name:'Logic Compact Negro', price:12.90, tags:['vapeo','moderno','discreto'], desc:'Vapeador Logic Compact en acabado negro.', color:'#101111', shape:'vape-pen', image:'Productos/logic negro.png' },
-  { id:'logic-pink',  cat:'vapeo', brand:'Logic', name:'Logic Compact Pink',  price:12.90, tags:['vapeo','llamativo','dulce'], desc:'Vapeador Logic Compact en acabado pink.', color:'#e54889', shape:'vape-pen', image:'Productos/logic pink.png' },
-  { id:'logic-rojo',  cat:'vapeo', brand:'Logic', name:'Logic Compact Rojo',  price:12.90, tags:['vapeo','llamativo'], desc:'Vapeador Logic Compact en acabado rojo.', color:'#c9253d', shape:'vape-pen', image:'Productos/logic rojo.png' },
-  { id:'logic-rosa',  cat:'vapeo', brand:'Logic', name:'Logic Compact Rosa',  price:12.90, tags:['vapeo','dulce','llamativo'], desc:'Vapeador Logic Compact en acabado rosa.', color:'#ec8db4', shape:'vape-pen', image:'Productos/logic rosa.png' },
-  { id:'logic-verde', cat:'vapeo', brand:'Logic', name:'Logic Compact Verde', price:12.90, tags:['vapeo','fresco','moderno'], desc:'Vapeador Logic Compact en acabado verde.', color:'#28a77b', shape:'vape-pen', image:'Productos/logic verde.png' },
+  {
+    id: 'with-device',
+    cat: 'vapeo',
+    brand: 'with.',
+    name: 'Dispositivo with.',
+    price: 32.90,
+    tags: ['vapeo', 'clasico', 'discreto', 'cualquier-momento'],
+    desc: 'Dispositivo with. en sus dos acabados principales: negro y gris.',
+    color: '#1c1c1e',
+    shape: 'heated-device',
+    swatches: ['#1c1c1e', '#8a8f98'], // Negro, Gris
+  },
+  {
+    id: 'with-mini',
+    cat: 'vapeo',
+    brand: 'with.',
+    name: 'Dispositivo mini with.',
+    price: 32.90,
+    tags: ['vapeo', 'clasico', 'discreto', 'cualquier-momento'],
+    desc: 'Formato mini with. compacto, disponible en acabados de color.',
+    color: '#f2efe9',
+    shape: 'heated-device',
+    swatches: ['#f2efe9', '#6fc3e8', '#b3273a', '#2f7d3c'], // Blanco, Azul, Rojo, Verde
+  },
+  {
+    id: 'logic-compact',
+    cat: 'vapeo',
+    brand: 'Logic',
+    name: 'Logic Compact',
+    price: 12.90,
+    tags: ['vapeo', 'moderno', 'discreto'],
+    desc: 'Vapeador desechable Logic Compact, disponible en 6 acabados de color.',
+    color: '#1c4fa8',
+    shape: 'vape-pen',
+    swatches: ['#1c4fa8', '#101111', '#e54889', '#c9253d', '#ec8db4', '#28a77b'], // Azul, Negro, Pink, Rojo, Rosa, Verde
+  },
 );
 
 // ---------- Fotografía de producto local ----------
@@ -228,6 +236,7 @@ const PRODUCT_IMAGES = {
   'silk-cut-blue':'silk cut azul.png', 'silk-cut-silver':'silk cut gris.png', 'silk-cut-purple':'silk cut lila.png', 'sobranie-blue':'soberanie azul.png', 'sobranie-gold':'soberanie gold.png', 'sobranie-blacks':'soberanie negro.png',
   'american-spirit-original':'american spirit amarillo.png', 'american-spirit-turquesa':'american spirit azul.png', 'american-spirit-naranja':'american spirit naranja.png', 'american-spirit-onyx':'american spirit negro.png', 'american-spirit-organic-mint':'american spirit verde.png',
   'benson-blue-gold':'benson blue gold.png', 'benson-special-filter-gold':'benson gold.png', 'benson-silver':'benson plata.png', 'benson-special-filter-red':'benson rojo.png',
+  'logic-compact':'logic azul.png',
   'correa-personalizable':'correa negra.png',
   'ploom-funda':'carcasa ploom negra.png',
   'nordic-spirit-estuche':'funda nordic azul.png',
@@ -239,6 +248,7 @@ const PRODUCT_IMAGE_VARIANTS = {
   'ploom-aura': { '#173f5c':'ploom aura azul.png', '#1c1c1e':'ploom aura negro.png', '#8a8f98':'ploom aura plata.png', '#e08bb0':'ploom aura rosa.png' },
   'with-device': { '#1c1c1e':'with negro.png', '#8a8f98':'with gris.png' },
   'with-mini': { '#f2efe9':'with blanco.png', '#6fc3e8':'with azul.png', '#b3273a':'with rojo.png', '#2f7d3c':'with verde.png' },
+  'logic-compact': { '#1c4fa8':'logic azul.png', '#101111':'logic negro.png', '#e54889':'logic pink.png', '#c9253d':'logic rojo.png', '#ec8db4':'logic rosa.png', '#28a77b':'logic verde.png' },
   'correa-personalizable': { '#1c8fd6':'correa azul.png', '#7c2fd6':'correa lila.png', '#1c1c1e':'correa negra.png', '#b3273a':'correa roja.png' },
   'ploom-funda': { '#1c1c1e':'carcasa ploom negra.png', '#3a4a5c':'carcasa ploom azul.png', '#8a1f2b':'carcasa ploom rosa.png', '#c9a24b':'carcasa ploom dorada.png' },
   'nordic-spirit-estuche': { '#0f4067':'funda nordic azul.png', '#2f7d3c':'funda nordic verde.png', '#9c1a6e':'funda nordic negra.png', '#ffffff':'funda nordic blanca.png' },
@@ -329,7 +339,7 @@ LOGIC_IDS.forEach(id => { BUNDLES[id] = ['correa-personalizable']; });
 
 // Accesorios -> el producto para el que están pensados
 BUNDLES['ploom-funda'] = ['ploom-x'];
-BUNDLES['correa-personalizable'] = ['ploom-x', 'logic-negro'];
+BUNDLES['correa-personalizable'] = ['ploom-x', 'logic-compact'];
 BUNDLES['nordic-spirit-estuche'] = ['nordic-spirit-mint'];
 BUNDLES['pitillera-personalizable'] = ['winston-blue', 'camel-filters'];
 
