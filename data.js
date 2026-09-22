@@ -227,7 +227,7 @@ PRODUCTS.push(
 // rutas relativas permite ejecutar el kiosco sin red y publicar la carpeta tal cual.
 const PRODUCT_IMAGES = {
   'ploom-x':'ploom negro.png', 'ploom-aura':'ploom aura negro.png', 'with-device':'with negro.png', 'with-mini':'with blanco.png',
-  'mevius-yellow-option':'mevius amarillo.png', 'mevius-smooth-regular':'mevius azul.png', 'mevius-muscat-green':'mevius greeen.png', 'mevius-deep-regular':'mevius verde.png', 'mevius-sharp-cold-menthol':'mevius menthol.png', 'mevius-purple-option':'mevius purple.png', 'mevius-red-option':'mevius rojo.png', 'mevius-cold-menthol':'mevius lila.png',
+  'mevius-yellow-option':'mevius amarillo.png', 'mevius-smooth-regular':'mevius azul.png', 'mevius-muscat-green':'mevius greeen.png', 'mevius-deep-regular':'mevius lila.png', 'mevius-sharp-cold-menthol':'mevius menthol.png', 'mevius-purple-option':'mevius purple.png', 'mevius-red-option':'mevius rojo.png', 'mevius-cold-menthol':'mevius verde.png',
   'evo-yellow':'evo amarilo.png', 'evo-amber':'evo amber.png', 'evo-aquamarine':'evo aquamarine.png', 'evo-bronze':'evo bronze.png', 'evo-tan':'evo tan.png', 'evo-white':'evo blanco.png', 'evo-red':'evo rojo.png', 'evo-rose':'evo rosa.png', 'evo-green':'evo verde.png',
   'lyo-zesty-pear':'lyo amarillo.png', 'lyo-arctic-mint':'lyo azul.png', 'lyo-wild-berry':'lyo rosa.png',
   'nordic-spirit-mint':'nordic spirit verde.png', 'nordic-spirit-forest-berries':'nordic spirit lila.png', 'nordic-spirit-raspberry':'nordic spirit rosa.png', 'nordic-spirit-raspberry-max':'nordic spirit rosita.png', 'nordic-spirit-lime':'nordic spirit lime.png', 'nordic-spirit-cherry':'nordic spirit rojo.png', 'nordic-spirit-ice':'nordinspirit azul.png',
@@ -254,6 +254,20 @@ const PRODUCT_IMAGE_VARIANTS = {
   'nordic-spirit-estuche': { '#0f4067':'funda nordic azul.png', '#2f7d3c':'funda nordic verde.png', '#9c1a6e':'funda nordic negra.png', '#ffffff':'funda nordic blanca.png' },
   'pitillera-personalizable': { '#1c1c1e':'pitillera negra.png', '#1c4fa8':'pitillera azul.png', '#c6c8ca':'pitillera plata.png', '#b3273a':'pitillera roja.png' },
 };
+// Imágenes que representan la acción al abrir/interactuar con cada producto.
+// Se mantienen separadas de las fotos de portada para que el catálogo no cambie.
+const CLICK_IMAGE_NAMES = {
+  'ploom negro.png':'Ploom Negro.png','ploom dorado.png':'ploom dorado.png','ploom plata.png':'ploom plata.png','ploom azul.png':'ploom azul.png',
+  'ploom aura azul.png':'ploom aura azul.png','ploom aura negro.png':'ploom aura negro.png','ploom aura plata.png':'ploom aura gris.png','ploom aura rosa.png':'ploom aura rosa.png',
+  'with negro.png':'witth grande negro.png','with gris.png':'with grande gris.png','with blanco.png':'with blanco.png','with azul.png':'with azul.png','with rojo.png':'with rojo.png','with verde.png':'with verde.png',
+  'logic azul.png':'logic azul.png','logic negro.png':'logic negro.png','logic pink.png':'logic pink.png','logic rojo.png':'logic rojo.png','logic rosa.png':'logic rosa.png','logic verde.png':'logic verde.png',
+  'lyo amarillo.png':'lyo amarillo.png','lyo azul.png':'lyo azul.png','lyo rosa.png':'lyo rosa.png',
+  'mevius amarillo.png':'mevius yellow.png','mevius azul.png':'mevius azul.png','mevius greeen.png':'mevius green.png','mevius verde.png':'mevius cold menthol.png','mevius menthol.png':'mevius sharp cold menthol.png','mevius purple.png':'mevius purple.png','mevius rojo.png':'mevius rojo.png','mevius lila.png':'mevius deep regular.png',
+  'nordic spirit verde.png':'nordic verde.png','nordic spirit lila.png':'nordic lila.png','nordic spirit rosa.png':'nordic rosa.png','nordic spirit rosita.png':'nordic raspberry.png','nordic spirit lime.png':'nordic lime.png','nordic spirit rojo.png':'nordic rojo.png','nordinspirit azul.png':'nordic azul.png',
+  'winston 1.png':'winston xstyle.png','winston 2.png':'winston white.png','winston 3.png':'winston silver.png','winston 4.png':'winston gris.png','winston 5.png':'winston blue.png','winston azu.png':'winston blue.png','winston rojo.png':'winston classic.png',
+  'evo aquamarine.png':'evo aquamarine.png','evo bronze.png':'evo bronze.png','evo tan.png':'evo tan.png','evo blanco.png':'evo blanco.png','evo rojo.png':'evo burgundy.png','evo verde.png':'evo green option.png'
+};
+const clickFilename=filename=>CLICK_IMAGE_NAMES[filename]||'';
 PRODUCTS.forEach(product => {
   if(PRODUCT_IMAGES[product.id]) product.image = `Productos/${PRODUCT_IMAGES[product.id]}`;
   if(PRODUCT_IMAGE_VARIANTS[product.id]) {
@@ -261,6 +275,11 @@ PRODUCTS.forEach(product => {
   }
   if(product.image) product.image = product.image.replace('Productos/', 'Productos/recortados/');
   if(product.imageVariants) Object.keys(product.imageVariants).forEach(color => { product.imageVariants[color] = product.imageVariants[color].replace('Productos/', 'Productos/recortados/'); });
+  const baseClick=clickFilename(PRODUCT_IMAGES[product.id]);
+  if(baseClick) product.clickImage=`Productos/Clic/${baseClick}`;
+  if(PRODUCT_IMAGE_VARIANTS[product.id]) {
+    product.clickImageVariants=Object.fromEntries(Object.entries(PRODUCT_IMAGE_VARIANTS[product.id]).map(([color,filename])=>[color,clickFilename(filename)?`Productos/Clic/${clickFilename(filename)}`:'']));
+  }
 });
 
 // ---------- Quiz ----------
