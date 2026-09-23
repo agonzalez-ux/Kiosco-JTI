@@ -265,7 +265,14 @@ const CLICK_IMAGE_NAMES = {
   'mevius amarillo.png':'mevius yellow.png','mevius azul.png':'mevius azul.png','mevius greeen.png':'mevius green.png','mevius verde.png':'mevius cold menthol.png','mevius menthol.png':'mevius sharp cold menthol.png','mevius purple.png':'mevius purple.png','mevius rojo.png':'mevius rojo.png','mevius lila.png':'mevius deep regular.png',
   'nordic spirit verde.png':'nordic verde.png','nordic spirit lila.png':'nordic lila.png','nordic spirit rosa.png':'nordic rosa.png','nordic spirit rosita.png':'nordic raspberry.png','nordic spirit lime.png':'nordic lime.png','nordic spirit rojo.png':'nordic rojo.png','nordinspirit azul.png':'nordic azul.png',
   'winston 1.png':'winston xstyle.png','winston 2.png':'winston white.png','winston 3.png':'winston silver.png','winston 4.png':'winston gris.png','winston 5.png':'winston blue.png','winston azu.png':'winston blue.png','winston rojo.png':'winston classic.png',
-  'evo aquamarine.png':'evo aquamarine.png','evo bronze.png':'evo bronze.png','evo tan.png':'evo tan.png','evo blanco.png':'evo blanco.png','evo rojo.png':'evo burgundy.png','evo verde.png':'evo green option.png'
+  'evo aquamarine.png':'evo aquamarine.png','evo bronze.png':'evo bronze.png','evo tan.png':'evo tan.png','evo blanco.png':'evo blanco.png','evo rojo.png':'evo burgundy.png','evo verde.png':'evo green option.png','evo rosa.png':'evo purple.png',
+  'camel amarillo.png':'camel amarillo.png','camel azul.png':'camel blue.png','camel light blue.png':'camel blue claro.png','camel premium.png':'camel slims.png',
+  'LD azul.png':'ld azul.png','LD rojo.png':'ld rojo.png',
+  'silk cut azul.png':'silk cut azul.png','silk cut gris.png':'silk cut gris.png','silk cut lila.png':'silk cut lila.png',
+  'soberanie azul.png':'sobranie azul.png','soberanie gold.png':'sobranie dorado.png','soberanie negro.png':'sobranie negro.png',
+  'american spirit amarillo.png':'american amarillo.png','american spirit azul.png':'american azul.png','american spirit naranja.png':'american naranja.png','american spirit negro.png':'american negra.png','american spirit verde.png':'american verde.png',
+  'benson blue gold.png':'benson azul.png','benson gold.png':'benson spceial.png','benson plata.png':'benson silver.png','benson rojo.png':'benson spceial.png',
+  'correa negra.png':'correa negra.png','correa azul.png':'correa azul.png','correa lila.png':'correa lila.png','correa roja.png':'correa roja.png'
 };
 const clickFilename=filename=>CLICK_IMAGE_NAMES[filename]||'';
 PRODUCTS.forEach(product => {
