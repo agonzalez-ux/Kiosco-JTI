@@ -121,7 +121,7 @@ const PRODUCTS = [
   { id: 'benson-blue-gold', cat: 'cigarrillos', brand: 'Benson & Hedges', name: 'Benson & Hedges Blue Gold', price: 6.00, tags: ['cigarrillos', 'clasico', 'moderno'], desc: 'Established 1873, London. El equilibrio entre clásico y moderno.', color: '#173f8c', shape: 'cig-pack' },
   { id: 'benson-special-filter-gold', cat: 'cigarrillos', brand: 'Benson & Hedges', name: 'Benson & Hedges Special Filter', price: 6.00, tags: ['cigarrillos', 'clasico'], desc: 'El icónico dorado "By Appointment to Her Majesty the Queen".', color: '#c9a24b', shape: 'cig-pack' },
   { id: 'benson-silver', cat: 'cigarrillos', brand: 'Benson & Hedges', name: 'Benson & Hedges Silver', price: 6.00, tags: ['cigarrillos', 'discreto', 'moderno'], desc: 'Una opción discreta y moderna, 5x20 cigarettes.', color: '#8a8f98', shape: 'cig-pack' },
-  { id: 'benson-special-filter-red', cat: 'cigarrillos', brand: 'Benson & Hedges', name: 'Benson & Hedges Special Filter (Red)', price: 6.00, tags: ['cigarrillos', 'intenso'], desc: 'Edición Special Filter con acento rojo, perfil más intenso.', color: '#b3273a', shape: 'cig-pack' },
+  { id: 'benson-special-filter-red', cat: 'cigarrillos', brand: 'Benson & Hedges', name: 'Benson & Hedges Special Filter Red', price: 6.00, tags: ['cigarrillos', 'intenso'], desc: 'Edición Special Filter con toque rojo y perfil más intenso.', color: '#b3273a', shape: 'cig-pack' },
 
   // ============= ACCESORIOS =============
   {
@@ -271,7 +271,7 @@ const CLICK_IMAGE_NAMES = {
   'silk cut azul.png':'silk cut azul.png','silk cut gris.png':'silk cut gris.png','silk cut lila.png':'silk cut lila.png',
   'soberanie azul.png':'sobranie azul.png','soberanie gold.png':'sobranie dorado.png','soberanie negro.png':'sobranie negro.png',
   'american spirit amarillo.png':'american amarillo.png','american spirit azul.png':'american azul.png','american spirit naranja.png':'american naranja.png','american spirit negro.png':'american negra.png','american spirit verde.png':'american verde.png',
-  'benson blue gold.png':'benson azul.png','benson gold.png':'benson spceial.png','benson plata.png':'benson silver.png','benson rojo.png':'benson spceial.png',
+  'benson blue gold.png':'benson azul.png','benson plata.png':'benson silver.png','benson rojo.png':'benson spceial.png',
   'correa negra.png':'correa negra.png','correa azul.png':'correa azul.png','correa lila.png':'correa lila.png','correa roja.png':'correa roja.png'
 };
 const clickFilename=filename=>CLICK_IMAGE_NAMES[filename]||'';

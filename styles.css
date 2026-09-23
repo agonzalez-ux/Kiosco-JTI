@@ -88,7 +88,7 @@ body{background:#080d0c}.catalogue{background:radial-gradient(ellipse at 77% 13%
 .modal-visual img.click-transform{animation:product-click-morph .47s cubic-bezier(.22,.8,.3,1) both;transform-origin:center;will-change:transform,filter}.modal-visual img.click-result{filter:drop-shadow(0 14px 22px rgba(0,0,0,.28))}@keyframes product-click-morph{0%{opacity:1;transform:scale(1) rotate(0);filter:blur(0)}42%{opacity:.96;transform:scale(.95) rotate(-1deg);filter:blur(.55px)}70%{opacity:.98;transform:scale(1.018) rotate(.5deg);filter:blur(.25px)}100%{opacity:1;transform:scale(1) rotate(0);filter:blur(0)}}
 
 /* Crossfade continuo entre la imagen normal y la imagen de interacción. */
-.custom-preview{isolation:isolate}.custom-preview>#modal-image{transition:opacity .12s linear}.custom-preview .click-overlay{z-index:1;opacity:0;pointer-events:none;filter:blur(.35px);transition:opacity .48s cubic-bezier(.22,.7,.25,1),filter .48s cubic-bezier(.22,.7,.25,1),transform .48s cubic-bezier(.22,.7,.25,1)}.custom-preview .click-overlay.is-visible{opacity:1;filter:blur(0);transform:translate(-50%,-50%) scale(var(--click-scale,1))}
+.custom-preview{isolation:isolate}.custom-preview>#modal-image{transition:opacity .12s linear,transform .18s ease-out}.custom-preview .click-overlay{z-index:1;opacity:0;pointer-events:none;filter:blur(.35px);transition:opacity .48s cubic-bezier(.22,.7,.25,1),filter .48s cubic-bezier(.22,.7,.25,1),transform .48s cubic-bezier(.22,.7,.25,1)}.custom-preview .click-overlay.is-visible{opacity:1;filter:blur(0);transform:translate(-50%,-50%) scale(var(--click-scale,1))}
 
 /* Solo los productos personalizables necesitan desplazamiento interno. */
 .modal-card:not(:has(.personalization)){overflow:hidden}.modal-card:has(.personalization){overflow:auto}
