@@ -90,3 +90,6 @@ body{background:#080d0c}.catalogue{background:radial-gradient(ellipse at 77% 13%
 
 /* Solo los productos personalizables necesitan desplazamiento interno. */
 .modal-card:not(:has(.personalization)){overflow:hidden}.modal-card:has(.personalization){overflow:auto}
+
+/* Vapeadores (Logic) y todos los accesorios: mismo tamaño y centrados en la ficha de producto. */
+.modal-card.shape-vape-pen .modal-visual img,.modal-card.shape-case .modal-visual img,.modal-card.shape-lanyard .modal-visual img{width:84%;height:86%;object-position:50% 50%}
