@@ -97,3 +97,5 @@ body{background:#080d0c}.catalogue{background:radial-gradient(ellipse at 77% 13%
 .modal-card.shape-vape-pen .modal-visual img,.modal-card.shape-case .modal-visual img,.modal-card.shape-lanyard .modal-visual img{width:84%;height:86%;object-position:50% 50%}
 /* Acción rápida para abrir la selección desde la confirmación de añadido. */
 .toast{display:flex;align-items:center;gap:10px;padding-right:14px}.toast-cart{padding:6px 10px;border:1px solid rgba(7,48,52,.35);border-radius:999px;background:transparent;color:#073034;font-size:.78rem;font-weight:700;white-space:nowrap;cursor:pointer}.toast-cart:hover{background:rgba(0,170,49,.1)}
+/* Todas las marcas de cigarrillos comparten la misma altura y margen visual. */
+.modal-card.shape-cig-pack .modal-visual img{height:84%;object-position:50% 50%}
