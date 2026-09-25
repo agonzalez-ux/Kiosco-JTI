@@ -271,7 +271,7 @@ const CLICK_IMAGE_NAMES = {
   'silk cut azul.png':'silk cut azul.png','silk cut gris.png':'silk cut gris.png','silk cut lila.png':'silk cut lila.png',
   'soberanie azul.png':'sobranie azul.png','soberanie gold.png':'sobranie dorado.png','soberanie negro.png':'sobranie negro.png',
   'american spirit amarillo.png':'american amarillo.png','american spirit azul.png':'american azul.png','american spirit naranja.png':'american naranja.png','american spirit negro.png':'american negra.png','american spirit verde.png':'american verde.png',
-  'benson blue gold.png':'benson azul.png','benson plata.png':'benson silver.png','benson rojo.png':'benson spceial.png',
+  'benson blue gold.png':'benson azul.png','benson gold.png':'benson special.png','benson plata.png':'benson silver.png','benson rojo.png':'benson red.png',
   'correa negra.png':'correa negra.png','correa azul.png':'correa azul.png','correa lila.png':'correa lila.png','correa roja.png':'correa roja.png'
 };
 const clickFilename=filename=>CLICK_IMAGE_NAMES[filename]||'';
