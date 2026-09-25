@@ -96,4 +96,4 @@ body{background:#080d0c}.catalogue{background:radial-gradient(ellipse at 77% 13%
 /* Vapeadores (Logic) y todos los accesorios: mismo tamaño y centrados en la ficha de producto. */
 .modal-card.shape-vape-pen .modal-visual img,.modal-card.shape-case .modal-visual img,.modal-card.shape-lanyard .modal-visual img{width:84%;height:86%;object-position:50% 50%}
 /* Acción rápida para abrir la selección desde la confirmación de añadido. */
-.toast{display:flex;align-items:center;gap:14px;padding-right:16px}.toast-cart{padding:8px 14px;border:0;border-radius:999px;background:#073034;color:#fff;font:inherit;font-weight:800;white-space:nowrap;cursor:pointer}.toast-cart:hover{background:#00aa31}
+.toast{display:flex;align-items:center;gap:10px;padding-right:14px}.toast-cart{padding:6px 10px;border:1px solid rgba(7,48,52,.35);border-radius:999px;background:transparent;color:#073034;font-size:.78rem;font-weight:700;white-space:nowrap;cursor:pointer}.toast-cart:hover{background:rgba(0,170,49,.1)}
