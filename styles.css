@@ -97,3 +97,7 @@ body{background:#080d0c}.catalogue{background:radial-gradient(ellipse at 77% 13%
 .modal-card.shape-vape-pen .modal-visual img,.modal-card.shape-case .modal-visual img,.modal-card.shape-lanyard .modal-visual img{width:84%;height:86%;object-position:50% 50%}
 /* Acción rápida para abrir la selección desde la confirmación de añadido. */
 .toast{display:flex;align-items:center;gap:14px;padding-right:16px}.toast-cart{padding:8px 14px;border:0;border-radius:999px;background:#073034;color:#fff;font:inherit;font-weight:800;white-space:nowrap;cursor:pointer}.toast-cart:hover{background:#00aa31}
+
+/* Centra la foto del producto dentro de su recuadro, tanto en el catálogo como en la ficha. */
+.product-stage img{left:0;right:0;top:0;bottom:0;margin:auto;object-position:50% 50%}
+.modal-visual img{object-position:50% 50%}
